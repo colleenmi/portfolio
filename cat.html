@@ -13,129 +13,70 @@
     <script src="assets/js/color-nodes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <meta name="theme-color" content="#712cf9" />
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none; 
-      }
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: #0000001a;
-        border: solid rgba(0, 0, 0, 0.15);
-        border-width: 1px 0;
-        box-shadow:
-          inset 0 0.5em 1.5em #0000001a,
-          inset 0 0.125em 0.5em #00000026;
-      }
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-      .bi {
-        vertical-align: -0.125em;
-        fill: currentColor;
-      }
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-      .bd-mode-toggle .bi {
-        width: 1em;
-        height: 1em;
-      }
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
+   <style>
+  /* Theme-aware color variables */
+  :root {
+    --hero-bg: #f3f4f6;      /* light card-like gray for body/hero */
+    --footer-bg: #e9ecef;    /* slightly darker footer in light mode */
+    --text-muted: #6c757d;
+  }
 
-      :root {
-        --bs-primary: #5a467d;
-      }
+  /* Dark theme overrides */
+  [data-bs-theme="dark"] {
+    --hero-bg: #1f2933;      /* dark card-like gray */
+    --footer-bg: #0f1720;    /* darker footer */
+    --text-muted: #9aa4ad;
+  }
 
-      /* Hero / jumbotron styles */
-      .hero {
-        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
-        padding: 2.25rem;
-        border-radius: .5rem;
-        margin-top: 4.5rem; /* account for fixed navbar */
-        box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-      }
-      .hero .left-col {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: left;
-      }
-      .carousel-img {
-        width: 100%;
-        height: 320px;
-        object-fit: cover;
-        border-radius: .375rem;
-      }
-      .popover {
-        max-width: 220px;
-      }
-      @media (max-width: 767.98px) {
-        .carousel-img {
-          height: 220px;
-        }
-        .hero {
-          margin-top: 3.5rem;
-        }
-      }
+  /* Auto mode: follow system preference */
+  @media (prefers-color-scheme: dark) {
+    html[data-bs-theme="auto"] {
+      --hero-bg: #1f2933;
+      --footer-bg: #0f1720;
+      --text-muted: #9aa4ad;
+    }
+  }
 
-      /* Back arrow */
-      .hero-back {
-        display: inline-flex;
-        align-items: center;
-        gap: .5rem;
-        text-decoration: none;
-        color: inherit;
-      }
-      .hero-back svg {
-        width: 1.25rem;
-        height: 1.25rem;
-      }
-    </style>
+  /* Apply to hero and footer */
+  .hero {
+    background-color: var(--hero-bg);
+    color: inherit;
+    padding: 2.25rem;
+    border-radius: .5rem;
+    margin-top: 4.5rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    line-height: 1.45;
+  }
+
+  footer.text-body-secondary {
+    background-color: var(--footer-bg);
+    color: var(--text-muted);
+  }
+
+  /* Make room for more text in hero left column */
+  .hero .left-col p.fs-5 {
+    max-width: 56ch; /* comfortable line length for paragraphs */
+  }
+
+  /* Slightly taller carousel to allow more vertical space */
+  .carousel-img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: .375rem;
+  }
+
+  @media (max-width: 767.98px) {
+    .carousel-img { height: 260px; }
+    .hero { margin-top: 3.5rem; }
+  }
+
+  /* Optional: subtle border between hero and page background */
+  body {
+    background-color: transparent;
+  }
+</style>
+    
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -265,18 +206,18 @@
 
             </div>
 
-            <!-- Right: single image carousel with hover blurbs -->
-            <div class="col-12 col-md-6">
-              <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" aria-label="Hero image carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="https://via.placeholder.com/800x480?text=Image+1" class="d-block w-100 carousel-img"
-                         alt="Image 1"
-                         data-bs-toggle="popover"
-                         data-bs-trigger="hover focus"
-                         data-bs-placement="left"
-                         data-bs-content="Short blurb for image one. Highlight a feature or caption." />
-                  </div>
+<!-- Right: single image carousel with hover blurbs -->
+<div class="col-12 col-md-6">
+  <div id="heroCarousel" class="carousel slide" aria-label="Hero image carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://via.placeholder.com/800x480?text=Image+1" class="d-block w-100 carousel-img"
+             alt="Image 1"
+             data-bs-toggle="popover"
+             data-bs-trigger="hover focus"
+             data-bs-placement="left"
+             data-bs-content="Short blurb for image one. Highlight a feature or caption." />
+      </div>
                   <div class="carousel-item">
                     <img src="https://via.placeholder.com/800x480?text=Image+2" class="d-block w-100 carousel-img"
                          alt="Image 2"
@@ -295,27 +236,24 @@
                   </div>
                 </div>
 
-                <!-- Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous slide">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next slide">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+              <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous slide">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next slide">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
 
-                <!-- Indicators -->
-                <div class="carousel-indicators mt-3">
-                  <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+    <!-- Indicators -->
+    <div class="carousel-indicators mt-3">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+  </div>
+</div>
 
         </div>
       </section>
@@ -328,31 +266,68 @@
       </div>
     </footer>
 
-    <script>
-      // Initialize popovers for hover blurbs
-      document.addEventListener('DOMContentLoaded', function () {
-        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-        popoverTriggerList.forEach(function (el) {
-          new bootstrap.Popover(el, {
-            trigger: el.getAttribute('data-bs-trigger') || 'hover',
-            placement: el.getAttribute('data-bs-placement') || 'top',
-            html: false
-          });
-        });
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    /* -------------------------
+       Theme toggle (Light/Dark/Auto)
+       ------------------------- */
+    const themeToggle = document.getElementById('bd-theme');
+    const themeButtons = document.querySelectorAll('[data-bs-theme-value]');
+    const htmlEl = document.documentElement;
 
-        // Pause carousel on hover, resume on leave
-        var carouselEl = document.getElementById('heroCarousel');
-        if (carouselEl) {
-          var carouselInstance = bootstrap.Carousel.getOrCreateInstance(carouselEl);
-          carouselEl.addEventListener('mouseenter', function () {
-            carouselInstance.pause();
-          });
-          carouselEl.addEventListener('mouseleave', function () {
-            carouselInstance.cycle();
-          });
-        }
+    // Helper to apply theme value to <html>
+    function applyTheme(value) {
+      if (!value) value = 'auto';
+      htmlEl.setAttribute('data-bs-theme', value);
+      // store preference
+      try { localStorage.setItem('preferredTheme', value); } catch (e) {}
+      // update active state in dropdown
+      themeButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-bs-theme-value') === value);
+        btn.setAttribute('aria-pressed', btn.getAttribute('data-bs-theme-value') === value ? 'true' : 'false');
       });
-    </script>
+    }
+
+    // Load saved preference or default to 'auto'
+    const saved = (function() {
+      try { return localStorage.getItem('preferredTheme'); } catch (e) { return null; }
+    })();
+    applyTheme(saved || 'auto');
+
+    // Wire up dropdown buttons
+    themeButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const val = this.getAttribute('data-bs-theme-value');
+        applyTheme(val);
+      });
+    });
+
+    /* -------------------------
+       Initialize Bootstrap popovers
+       ------------------------- */
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+    popoverTriggerList.forEach(function (el) {
+      new bootstrap.Popover(el, {
+        trigger: el.getAttribute('data-bs-trigger') || 'hover',
+        placement: el.getAttribute('data-bs-placement') || 'top',
+        html: false
+      });
+    });
+
+    /* -------------------------
+       Carousel: create instance but DO NOT auto-cycle
+       ------------------------- */
+    var carouselEl = document.getElementById('heroCarousel');
+    if (carouselEl) {
+      // Create instance without starting cycle
+      var carouselInstance = bootstrap.Carousel.getOrCreateInstance(carouselEl, {
+        interval: false, // ensure no automatic interval
+        ride: false
+      });
+      // Do not call carouselInstance.cycle() — carousel will only change via controls/indicators
+    }
+  });
+</script>
 
     <!-- If you have a local bootstrap bundle, you can remove the CDN script above and use the local one.
          The original file referenced ../assets/dist/js/bootstrap.bundle.min.js — keep only one bootstrap bundle. -->
