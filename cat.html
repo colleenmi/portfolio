@@ -251,16 +251,67 @@
         <div class="container">
       <div class="container col-xxl-8 px-4 py-5">
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+
+<!-- carousel maxxing --> 
           <div class="col-10 col-sm-8 col-lg-6">
-            <img
-              src="bootstrap-themes.png"
-              class="d-block mx-lg-auto img-fluid"
-              alt="Bootstrap Themes"
-              width="700"
-              height="500"
-              loading="lazy"
-            />
-          </div>
+
+  <!-- Bootstrap Carousel -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <img
+          src="bootstrap-themes.png"
+          class="d-block w-100 img-fluid"
+          alt="Bootstrap Themes"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="This is a sample blurb about the first image."
+        />
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <img
+          src="image2.png"
+          class="d-block w-100 img-fluid"
+          alt="Second Image"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="Another blurb describing this image."
+        />
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <img
+          src="image3.png"
+          class="d-block w-100 img-fluid"
+          alt="Third Image"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="A final blurb for the third image."
+        />
+      </div>
+
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+
+</div>
+
+          
       <div class="col-lg-6">
 
   <!-- Main Heading -->
@@ -290,12 +341,12 @@
   </p>
 
   <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                  <button
-                type="button"
-                class="btn btn-outline-secondary btn-lg px-4"
-              >
-                Back to home
-              </button>
+<a
+  href="personal/index.html"
+  class="btn btn-outline-secondary btn-lg px-4"
+>
+  Back to home
+</a>
   </div>
 
 </div>
@@ -320,5 +371,12 @@
       src="../assets/dist/js/bootstrap.bundle.min.js"
       class="astro-vvvwv3sm"
     ></script>
+
+    <script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
+</script>
+
+    
   </body>
 </html>
