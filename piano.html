@@ -98,6 +98,36 @@
       :root {
   --bs-primary: #5a467d;
 }
+ /* Ensure images cover their containers */
+  .object-fit-cover { object-fit: cover; height: 100%; }
+
+  /* Media card base */
+  .media-card { background: #f8f9fa; position: relative; overflow: hidden; }
+
+  /* Overlay that appears on hover */
+  .media-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 220ms ease;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+
+  /* Show overlay on hover or focus (keyboard accessible) */
+  .media-card:hover .media-overlay,
+  .media-card:focus-within .media-overlay,
+  .media-card:active .media-overlay {
+    opacity: 1;
+  }
+
+  /* Improve spacing for small screens */
+  @media (max-width: 991.98px) {
+    .media-card { min-height: 160px; }
+  }
+      
     </style>
   </head>
   <body>
@@ -247,156 +277,115 @@
     </header>
     <main>
 
-      <div class="album py-5 bg-body-tertiary">
-        <div class="container">
-      <div class="container col-xxl-8 px-4 py-5">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-
-<!-- carousel maxxing --> 
-          <div class="col-10 col-sm-8 col-lg-6">
-
-  <!-- Bootstrap Carousel -->
-  <div id="heroCarousel" class="carousel slide" >
-
-    <div class="carousel-inner">
-
-
-
-      <!-- Slide 2 -->
-      <div class="carousel-item active">
-        <img
-          src="uploads/apparatus.jpg"
-          class="d-block w-100 img-fluid"
-          alt="Helium Sparging Apparatus"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          title="Testing apparatus for He sparging in glovebox"
-        />
-      </div>
-
-            <!-- Slide 1 -->
-      <div class="carousel-item ">
-        <img
-          src="uploads/fusionapp.png"
-          class="d-block w-100 img-fluid"
-          alt="CAD monkey"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          title="Fusion360 mockup of manufactured sparging apparatus in slide 1 :)"
-        />
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <img
-          src="uploads/mechopped.jpg"
-          class="d-block w-100 img-fluid"
-          alt="glovebox warrior"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          title="the most fun an undergrad can have in lab - messing around in glovebox"
-        />
-      </div>
-
-            <div class="carousel-item">
-        <img
-          src="uploads/abclogo.png"
-          class="d-block w-100 img-fluid"
-          alt="logo"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          title="Logo for UIUC's Advanced Blankets and Coolants Laboratory, NPRE department, absolute GOAT professor Vergari"
-        />
-      </div>
       
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container col-xxl-8 px-4 py-5">
 
-    </div>
+      <div class="row g-5 align-items-start">
 
-    <!-- Carousel Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
+        <!-- LEFT: Text column -->
+        <div class="col-lg-7 order-1 order-lg-1">
+          <h1 class="display-6 fw-bold text-body-emphasis lh-1 mb-3">ASME Hybrid Piano Project</h1>
+          <h2 class="fs-4 fst-italic text-secondary mb-2">Club Involvement - American Society of Mechanical Engineers UIUC</h2>
+          <h3 class="fs-5 text-muted mb-4">November 2025 - April 2026</h3>
 
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
+          <p class="lead mb-4">
+            I co-led this project through the American Society of Mechanical Engineers with my friend Noah. Each year, the University of Illinois at Urbana-Champaign hosts Engineering Open House, a two‑day fair where students present personal and research projects to the public.
+          </p>
 
-  </div>
+          <p>
+            Our goal was to build a silent system piano, a piano that functions acoustically as usual, but can also mute its sound and convert key presses into digital audio through sensors. Commercial systems cost around $2,000, but we attempted to build ours for roughly $300.
+          </p>
 
-</div>
+          <p>
+            I led a team of 35–40 students to design and build the system. We sourced a free piano from Decatur, transported it, tuned it, and attempted basic refurbishment.
+          </p>
 
-          
-      <div class="col-lg-6">
+          <p>
+            To mute the piano, our mechanical team designed a motorized mute rail. Two small DC 48:1 gearbox motors drove pinion gears along 3D‑printed racks, pushing a wooden rail that pressed the hammers farther from the strings. We also 3D‑printed TPU grommets for lifter wires, tuned the spinet piano, and fabricated housings using CAD, slicing software, and tools such as circular saws.
+          </p>
 
-  <!-- Main Heading -->
-  <h1 class="display-6 fw-bold text-body-emphasis lh-1 mb-3">
-    ASME Hybrid Piano Project
-  </h1>
+          <p>
+            The electrical team applied copper tape to the backs of the keys to create on/off contacts that an Arduino Uno could interpret, instead of paying for 176 costly sensors. By measuring the time between key‑press start and release, the Arduino detected note activation, deactivation, and striking velocity, enabling dynamic contrast.
+          </p>
 
-  <!-- Subheading (italic) -->
-  <h2 class="fs-4 fst-italic text-secondary mb-3">
-   Club Involvement - American Society of Mechanical Engineers UIUC
-  </h2>
+          <p>
+            We wired 11 proto boards with shift registers, each handling eight keys. These boards passed binary data to an audio module that converted the signals to MIDI, programmed by our lead, Dominick.
+          </p>
 
-  <!-- Sub‑subheading #2 -->
-  <h3 class="fs-5 text-muted mb-2">
-November 2025 - April 2026 
-  </h3>
-<p class="lead mb-4">
-I co-led this project through the American Society of Mechanical Engineers with my friend Noah. Each year, the University of Illinois at Urbana-Champaign hosts Engineering Open House, a two‑day fair where students present personal and research projects to the public.
-</p>
+          <p>
+            Throughout the project, students learned skills including iterative 3D printing, embedded electronics, wire management, soldering, PCB design, troubleshooting daisy‑chained boards, and presenting technical concepts to children.
+          </p>
 
-<p>
-Our goal was to build a silent system piano, a piano that functions acoustically as usual, but can also mute its sound and convert key presses into digital audio through sensors. Commercial systems cost around $2,000, but we attempted to build ours for roughly $300.
-</p>
+          <p>
+            Although the system wasn’t fully successful, we achieved a functional mute rail and approximately 30 working keys. This was the most daunting project I’ve ever led — and my first time leading a team.
+          </p>
 
-<p>
-I led a team of 35–40 students to design and build the system. We sourced a free piano from Decatur, transported it, tuned it, and attempted basic refurbishment.
-</p>
+          <p>Look through the photos and videos on the right for process shots, demos, and slideshows.</p>
 
-<p>
-To mute the piano, our mechanical team designed a motorized mute rail. Two small DC 48:1 gearbox motors drove pinion gears along 3D‑printed racks, pushing a wooden rail that pressed the hammers farther from the strings. We also 3D‑printed TPU grommets for lifter wires, tuned the spinet piano, and fabricated housings using CAD, slicing software, and tools such as circular saws.
-</p>
-
-<p>
-The electrical team applied copper tape to the backs of the keys to create on/off contacts that an Arduino Uno could interpret, instead of paying for 176 costly sensors. By measuring the time between key‑press start and release, the Arduino detected note activation, deactivation, and striking velocity, enabling dynamic contrast.
-</p>
-
-<p>
-We wired 11 proto boards with shift registers, each handling eight keys. These boards passed binary data to an audio module that converted the signals to MIDI, programmed by our lead, Dominick.
-</p>
-
-<p>
-Throughout the project, students learned skills including iterative 3D printing, embedded electronics, wire management, soldering, PCB design, troubleshooting daisy‑chained boards, and presenting technical concepts to children.
-</p>
-
-<p>
-Although the system wasn’t fully successful, we achieved a functional mute rail and approximately 30 working keys. This was the most daunting project I’ve ever led — and my first time leading a team.
-</p>
-
-<p>
-Look through the photos and videos above!
-</p>
-
-
-  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-<a
-  href="index.html"
-  class="btn btn-outline-secondary btn-lg px-4"
->
-  Back to home
-</a>
-  </div>
-
-</div>
-
-
-            </div>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+            <a href="index.html" class="btn btn-outline-secondary btn-lg px-4">Back to home</a>
           </div>
         </div>
+
+        <!-- RIGHT: Media column -->
+        <aside class="col-lg-5 order-2 order-lg-2">
+          <div class="d-flex flex-column gap-3">
+
+            <!-- Media card: image with hover blurb -->
+            <figure class="media-card position-relative overflow-hidden rounded" style="min-height:180px;">
+              <img src="images/piano-transport.jpg" alt="Team transporting piano" class="w-100 h-100 object-fit-cover">
+              <figcaption class="media-overlay d-flex align-items-center justify-content-center text-center p-3">
+                <div>
+                  <strong>Transport & Refurb</strong>
+                  <div class="small">Transporting the free piano from Decatur and initial refurbishment.</div>
+                </div>
+              </figcaption>
+            </figure>
+
+            <!-- Media card: image with hover blurb -->
+            <figure class="media-card position-relative overflow-hidden rounded" style="min-height:180px;">
+              <img src="images/mute-rail.jpg" alt="3D printed racks and mute rail" class="w-100 h-100 object-fit-cover">
+              <figcaption class="media-overlay d-flex align-items-center justify-content-center text-center p-3">
+                <div>
+                  <strong>Mute Rail Assembly</strong>
+                  <div class="small">3D‑printed racks, pinion gears, and the motorized mute rail in action.</div>
+                </div>
+              </figcaption>
+            </figure>
+
+            <!-- Media card: video with hover blurb -->
+            <figure class="media-card position-relative overflow-hidden rounded" style="min-height:220px;">
+              <video class="w-100 h-100" controls preload="metadata" poster="images/video-poster.jpg">
+                <source src="videos/mute-rail-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="media-overlay d-flex align-items-center justify-content-center text-center p-3">
+                <div>
+                  <strong>Demo Video</strong>
+                  <div class="small">Watch the mute rail engage and the Arduino detecting key presses.</div>
+                </div>
+              </figcaption>
+            </figure>
+
+            <!-- Media card: slideshow link -->
+            <a class="media-card position-relative overflow-hidden rounded d-block text-decoration-none" href="slides/slideshow.html" target="_blank" style="min-height:180px;">
+              <img src="images/slideshow-thumb.jpg" alt="Slideshow thumbnail" class="w-100 h-100 object-fit-cover">
+              <div class="media-overlay d-flex align-items-center justify-content-center text-center p-3">
+                <div>
+                  <strong>Full Slideshow</strong>
+                  <div class="small">Open the complete build slideshow (photos, notes, and diagrams).</div>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </aside>
       </div>
-        </div>
-      </div>
+    </div>
+  </div>
+
+      
     </main>
     <footer class="text-body-secondary py-5">
       <div class="container">
