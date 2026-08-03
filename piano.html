@@ -290,7 +290,7 @@
 <h2 class="fs-4 fst-italic text-secondary mb-2">Club Involvement - American Society of Mechanical Engineers UIUC</h2>
 <h3 class="fs-5 text-muted mb-4">November 2025 - April 2026</h3>
 
-<p class="lead mb-4">
+<p class="fs-5 mt-3 mb-2">
 For UIUC Engineering Open House 2026 theme Forging the Future, I co-led a digital hybrid piano project with my friend Noah as part of the American Society of Mechanical Engineers.
 </p>
 
@@ -302,16 +302,12 @@ Each year the University of Illinois at Urbana Champaign hosts Engineering Open 
 Commercial silent systems cost around $2,000. Our goal was to build a fully DIY hybrid piano for roughly $300 while preserving normal acoustic operation and adding a digital output for headphones and recording.
 </p>
 
-<hr>
 
-<h4 class="fs-5 mt-3 mb-2">Team and roles</h4>
 <p>
-We worked with a recurring team of 15–20 members organized into mechanical, electrical, and sound subteams. I coordinated the overall project and led the integration between subteams.
+I worked with a recurring team of 15–20 members organized into mechanical, electrical, and sound subteams. I coordinated the overall project and led the integration between subteams.
 </p>
 
-<hr>
 
-<h4 class="fs-5 mt-3 mb-2">Mechanical design</h4>
 <p>
 The mechanical subteam designed a removable mute mechanism that fully silences the piano when engaged. Using Fusion 360, we modeled a compact rack and pinion assembly driven by two DC 48:1 gearbox motors. The motors drive pinion gears along 3D printed racks to push a large dowel that moves the hammers away from the strings, effectively muting the acoustic sound while remaining removable for maintenance.
 </p>
@@ -320,9 +316,7 @@ The mechanical subteam designed a removable mute mechanism that fully silences t
 We also redesigned grommets for the lifter wires on the spinet piano and 3D printed them in TPU to match rubber-like elasticity while allowing fine adjustment.
 </p>
 
-<hr>
 
-<h4 class="fs-5 mt-3 mb-2">Electrical and sensing</h4>
 <p>
 To avoid the cost of 176 commercial sensors, the electrical team applied copper tape to the backs of the keys to create simple on/off contacts. An Arduino Uno measured the time between contact connect and disconnect to detect note activation, release, and striking velocity. By mapping the measured milliseconds to volume, the system produced dynamic contrast: longer times correspond to softer dynamics and shorter times to louder dynamics.
 </p>
@@ -331,21 +325,17 @@ To avoid the cost of 176 commercial sensors, the electrical team applied copper 
 We built 11 proto boards with shift registers, each handling eight keys, and routed binary data to an audio module that converted signals to MIDI. The proto boards included capacitors and debouncing measures to reduce false triggers.
 </p>
 
-<hr>
 
-<h4 class="fs-5 mt-3 mb-2">Sound integration and prototype</h4>
 <p>
 The sound team mapped Arduino outputs to piano notes and tested a demo board that produced digital audio from the sensor signals. Midway through the timeline we had a functioning prototype that demonstrated both digital and acoustic operation.
 </p>
 
-<hr>
 
-<h4 class="fs-5 mt-3 mb-2">What we learned</h4>
 <p>
 Students gained hands-on experience in iterative 3D printing, embedded electronics, wire management, soldering, PCB prototyping, troubleshooting daisy chained boards, and communicating technical concepts to a general audience. This was my first time leading a technical project; the role involved many iterations, late-night decisions, and a new appreciation for PCB design and careful mechanical tolerancing.
 </p>
 
-<p class="mb-4">
+<p>
 Although the system was not fully complete by the final demo, we achieved a functional mute rail and roughly 30 working keys. The project remains the most challenging I have led and a major learning experience.
 </p>
 
@@ -363,8 +353,8 @@ Although the system was not fully complete by the final demo, we achieved a func
 <img src="uploads/teampiceoh.JPG" alt="Team at Engineering Open House" class="w-100 h-100 object-fit-cover">
 <figcaption class="media-overlay d-flex align-items-center justify-content-center text-center p-3">
 <div>
-<strong>Team at Engineering Open House</strong>
-<div class="small">Project presentation during EOH 2026 Forging the Future.</div>
+<strong>EOH Presenters :)</strong>
+<div class="small">Team picture of us mid-presentation</div>
 </div>
 </figcaption>
 </figure>
@@ -374,48 +364,48 @@ Although the system was not fully complete by the final demo, we achieved a func
 <img src="uploads/teampicsiebel.JPG" alt="Project team near Siebel" class="w-100 h-100 object-fit-cover">
 <figcaption class="media-overlay d-flex align-items-center justify-content-center text-center p-3">
 <div>
-<strong>Core Team</strong>
-<div class="small">Recurring members organized into mechanical, electrical, and sound teams.</div>
+<strong>Bigger team picture</strong>
+<div class="small">Recurring crew of people working</div>
 </div>
 </figcaption>
 </figure>
 
 <!-- Digital piano video -->
 <figure class="media-card position-relative overflow-hidden rounded" style="min-height:220px;">
-  <video class="w-100 h-100" controls preload="auto" playsinline poster="uploads/digpiano.jpg">
+  <video class="w-100 h-100" controls preload="auto" playsinline poster="uploads/digpiano.png">
     <source src="uploads/digpiano.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </figure>
-<p class="small text-center mt-2">
-  <strong>Digital Piano Demo</strong><br>
-  Digital output produced from the sensor array and Arduino processing.
+<p class="small text-left mt-2">
+  <strong>Working Digital Piano</strong><br>
+Fully wired digital piano working!!
 </p>
 
 
 <!-- Acoustic piano video -->
 <figure class="media-card position-relative overflow-hidden rounded" style="min-height:220px;">
-  <video class="w-100 h-100" controls preload="auto" playsinline poster="uploads/regacoustic.jpg">
+  <video class="w-100 h-100" controls preload="auto" playsinline poster="uploads/regacoustic.png">
     <source src="uploads/regacoustic.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </figure>
-<p class="small text-center mt-2">
-  <strong>Acoustic Piano Demo</strong><br>
-  Piano functioning acoustically with the mute rail disengaged.
+<p class="small text-left mt-2">
+  <strong>Working Acoustic Piano</strong><br>
+ Both functionalities of this piano were achieved!
 </p>
 
 
 <!-- Rack and pinion video -->
 <figure class="media-card position-relative overflow-hidden rounded" style="min-height:220px;">
-  <video class="w-100 h-100" controls preload="auto" playsinline poster="uploads/rackpinion.jpg">
+  <video class="w-100 h-100" controls preload="auto" playsinline poster="uploads/rackpinion.png">
     <source src="uploads/rackpinion.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </figure>
-<p class="small text-center mt-2">
+<p class="small text-left mt-2">
   <strong>Mute Rail Mechanism</strong><br>
-  Rack and pinion assembly driven by DC gearbox motors to engage the mute rail.
+  Rack and pinion set to engage mute rail
 </p>
 
 <!-- Grommet photo -->
@@ -424,7 +414,7 @@ Although the system was not fully complete by the final demo, we achieved a func
 <figcaption class="media-overlay d-flex align-items-center justify-content-center text-center p-3">
 <div>
 <strong>TPU Grommet</strong>
-<div class="small">Redesigned lifter wire grommet 3D printed in TPU for elasticity and adjustability.</div>
+<div class="small">Redesigned lifter wire grommet - see red circle</div>
 </div>
 </figcaption>
 </figure>
@@ -434,8 +424,7 @@ Although the system was not fully complete by the final demo, we achieved a func
 <img src="uploads/electricalthumbnail.png" alt="Electrical slideshow thumbnail" class="w-100 h-100 object-fit-cover">
 <div class="media-overlay d-flex align-items-center justify-content-center text-center p-3">
 <div>
-<strong>Electrical Slideshow</strong>
-<div class="small">Click to open the electrical team slideshow with schematics and notes.</div>
+<strong>Electrical Walkthrough (Click here)</strong>
 </div>
 </div>
 </a>
@@ -446,7 +435,7 @@ Although the system was not fully complete by the final demo, we achieved a func
 <figcaption class="media-overlay d-flex align-items-center justify-content-center text-center p-3">
 <div>
 <strong>Proto Board Testing</strong>
-<div class="small">Arduino Uno and proto boards used to validate key scanning and debouncing.</div>
+<div class="small">Arduino Uno and proto boards, using prototype to quality test</div>
 </div>
 </figcaption>
 </figure>
@@ -456,35 +445,35 @@ Although the system was not fully complete by the final demo, we achieved a func
 <img src="uploads/superglue.jpg" alt="Shift register and capacitor assembly" class="w-100 h-100 object-fit-cover">
 <figcaption class="media-overlay d-flex align-items-center justify-content-center text-center p-3">
 <div>
-<strong>Debounce Hardware</strong>
-<div class="small">Shift registers and capacitors added to mitigate bouncing and improve signal stability.</div>
+<strong>Wired protoboard</strong>
+<div class="small">Protoboard attached to piano</div>
 </div>
 </figcaption>
 </figure>
 
 <!-- Millisecond delay comparison video -->
 <figure class="media-card position-relative overflow-hidden rounded" style="min-height:220px;">
-  <video class="w-100 h-100" controls preload="auto" playsinline poster="uploads/msdelaycomp.jpg">
+  <video class="w-100 h-100" controls preload="auto" playsinline poster="uploads/msdelaycomp.png">
     <source src="uploads/msdelaycomp.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </figure>
-<p class="small text-center mt-2">
-  <strong>Dynamics Timing Demo</strong><br>
-  Comparison showing how measured milliseconds map to dynamic levels in the Arduino code.
+<p class="small text-left mt-2">
+  <strong>Arduino interpreting keypress</strong><br>
+  ms delay for keypresses
 </p>
 
 
 <!-- Banquet demo video -->
 <figure class="media-card position-relative overflow-hidden rounded" style="min-height:220px;">
-  <video class="w-100 h-100" controls preload="auto" playsinline poster="uploads/banquet.jpg">
+  <video class="w-100 h-100" controls preload="auto" playsinline poster="uploads/banquet.png">
     <source src="uploads/banquet.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </figure>
-<p class="small text-center mt-2">
+<p class="small text-left mt-2">
   <strong>Prototype Demo</strong><br>
-  Mid‑timeline prototype demonstrating integrated digital and acoustic operation.
+  First working prototype for banquet in February
 </p>
 
 <!-- Behind the scenes photo -->
@@ -492,8 +481,7 @@ Although the system was not fully complete by the final demo, we achieved a func
 <img src="uploads/bts.JPG" alt="Behind the scenes" class="w-100 h-100 object-fit-cover">
 <figcaption class="media-overlay d-flex align-items-center justify-content-center text-center p-3">
 <div>
-<strong>Behind the Scenes</strong>
-<div class="small">Final build photos and workshop shots from the project timeline.</div>
+<div class="small">piano team behind the scenes</div>
 </div>
 </figcaption>
 </figure>
