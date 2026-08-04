@@ -130,37 +130,49 @@
     .media-card { min-height: 160px; }
   }
 
-        /* small confined slide */
-  .small-slide {
-    width: 160px;           /* adjust width as needed */
-    height: 90px;           /* adjust height as needed */
-    margin: 0 auto;         /* center inside the carousel */
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  }
+#heroCarousel .carousel-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
 
-  .small-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+/* make each carousel-item center its content without stretching */
+#heroCarousel .carousel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
 
-  /* keep carousel vertical centering for small slides */
-  #heroCarousel .carousel-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 0; /* prevents large default height */
-  }
+/* small confined box for the news thumbnail */
+.small-slide {
+  width: 160px;        /* adjust to desired small size */
+  height: 90px;        /* adjust to desired small size */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  /* optional: reduce carousel controls vertical size when slides are small */
-  #heroCarousel .carousel-control-prev,
-  #heroCarousel .carousel-control-next {
-    top: 50%;
-    transform: translateY(-50%);
-  }
+/* ensure the image fills the small box proportionally */
+.small-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* keep carousel controls vertically centered for small slides */
+#heroCarousel .carousel-control-prev,
+#heroCarousel .carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+      
       
     </style>
   </head>
@@ -362,11 +374,11 @@ Excel help for the Engineering Student Project Laboratory and Women in Engineeri
       <div id="heroCarousel" class="carousel slide">
         <div class="carousel-inner">
 
+<!-- small news slide -->
 <div class="carousel-item active">
-  <div class="small-slide">
+  <div class="small-slide" aria-hidden="false" aria-label="ASME Weekly Newsletter sample">
     <img
       src="uploads/news.png"
-      class="img-fluid"
       alt="ASME Weekly Newsletter sample"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
@@ -375,7 +387,7 @@ Excel help for the Engineering Student Project Laboratory and Women in Engineeri
   </div>
 </div>
 
-<!-- keep other slides unchanged (they can remain full width) -->
+<!-- other slides remain full width -->
 <div class="carousel-item">
   <img
     src="uploads/fundraising.JPG"
