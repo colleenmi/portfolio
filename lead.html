@@ -130,32 +130,7 @@
     .media-card { min-height: 160px; }
   }
 
-#heroCarousel .carousel-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 0;
-}
 
-/* stable carousel height */
-#heroCarousel { --carousel-height: 220px; } /* adjust height to match your design */
-#heroCarousel .carousel-inner { height: var(--carousel-height); }
-
-/* center slide content */
-#heroCarousel .carousel-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-
-/* unified slide sizing for full-width slides */
-#heroCarousel .carousel-item img.full-slide {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* use 'contain' if you prefer no cropping */
-  display: block;
-}
       
     </style>
   </head>
@@ -352,45 +327,44 @@ Excel help for the Engineering Student Project Laboratory and Women in Engineeri
 </a>
   
   
-<div class="col-12">
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+<!-- Carousel -->
+    <div class="col-12">
+      <div id="heroCarousel" class="carousel slide">
+        <div class="carousel-inner">
 
-      <!-- news slide (now same size as the other slide) -->
-      <div class="carousel-item active">
-        <img
-          src="uploads/news.png"
-          class="full-slide"
-          alt="ASME Weekly Newsletter sample"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          title="ASME Weekly Newsletter sample"
-        />
+          <div class="carousel-item active">
+            <img
+              src="uploads/news.png"
+              class="d-block w-100 img-fluid"
+              alt="weekly newsletter"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="ASME Weekly Newsletter sample"
+            />
+          </div>
+
+          <div class="carousel-item">
+            <img
+              src="uploads/fundraising.JPG"
+              class="d-block w-100 img-fluid"
+              alt="Motor Mount 3 CAD"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Harsh fundraising methods :("
+            />
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
-
-      <!-- fundraising slide -->
-      <div class="carousel-item">
-        <img
-          src="uploads/fundraising.JPG"
-          class="full-slide"
-          alt="Fundraising"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          title="Harsh fundraising methods :("
-        />
-      </div>
-
     </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-</div>
 
 </div>
 </aside>
